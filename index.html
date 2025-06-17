@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dharti-e | Launching Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('assets/images/coir-texture.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      padding: 1rem;
+    }
+
+    .floating-leaf {
+      position: absolute;
+      width: 80px;
+      opacity: 1;
+      animation: float 10s ease-in-out infinite, rotate 15s linear infinite;
+    }
+    
+
+    @keyframes float {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 0.2; }
+      50% { transform: translateY(400px) rotate(180deg); opacity: 0.3; }
+      100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 0.2; }
+      50% { transform: translateY(400px) rotate(180deg); opacity: 0.3; }
+      100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+    }
+    .launch-container {
+      background: rgba(234, 182, 146, 0.95);
+      padding: 2.5rem;
+      border-radius: 16px;
+      max-width: 520px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease-in-out;
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 1.2rem;
+      animation: floatLogo 4s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
+      color: #2e7d32;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .date {
+      font-weight: bold;
+      color: #1b5e20;
+      font-size: 1.1rem;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="C:/Users/vedan/OneDrive/Desktop/Personal Workspace Projetcs/launchsite/background-music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Floating Leaves -->
+  <script>
+    for (let i = 0; i < 150; i++) {
+      const leaf = document.createElement('img');
+      leaf.src = "C:/Users/vedan/OneDrive/Desktop/Personal Workspace Projetcs/launchsite/leaf.png";; // Replace with actual path
+      leaf.className = 'floating-leaf';
+      leaf.style.left = Math.random() * 100 + 'vw';
+      leaf.style.top = Math.random() * -100 + 'px';
+      leaf.style.animationDuration = (10 + Math.random() * 10) + 's';
+      leaf.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(leaf);
+    }
+  </script>
+
+  <!-- Main Container -->
+  <div class="launch-container">
+    <img src="C:\Users\vedan\OneDrive\Desktop\Personal Workspace Projetcs\launchsite\logo.jpg" alt="Dharti-e Logo" class="logo" />
+    <h1>Something Eco is Coming...</h1>
+    <p>We’re crafting beautiful coir essentials inspired by Earth. 🌿</p>
+    <p class="date">Launching on <strong>9th August 2025</strong></p>
+    <p>Our site is under mindful maintenance. Stay tuned!</p>
+    <div class="footer">&copy; 2025 Dharti-e | Rooted For Earth</div>
+  </div>
+</body>
+</html>
